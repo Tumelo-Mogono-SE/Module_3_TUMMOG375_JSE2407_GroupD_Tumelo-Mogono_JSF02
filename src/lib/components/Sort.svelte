@@ -2,16 +2,29 @@
     import { onMount } from 'svelte';
     import { productStore } from '../../store/store.js';
 
+    /**
+     * Current sorting method.
+     * @type {string}
+     */
     let sorting;
 
     const { subscribe, sortProducts, setSorting } = productStore;
 
+    /**
+     * Life cycle hook that will be used to subscribe to productStore updates on component mount.
+     *  Which updates the sorting method from the store's state.
+     */
     onMount(() => {
         subscribe(value => {
         sorting = value.sorting;
         });
     });
 
+    /**
+     * Handle the sorting method change.
+     * Updates the sorting method in the store and sorts products accordingly.
+     * @param {Object} event - The change event from the sorting dropdown.
+     */
     const handleSort = (event) => {
         setSorting(event.target.value);
         sortProducts();

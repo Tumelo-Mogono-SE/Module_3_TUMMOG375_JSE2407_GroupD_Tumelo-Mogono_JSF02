@@ -3,13 +3,26 @@
     import { productStore } from '../../store/store.js';
     import { getCategories } from '../../api/api.js';
 
+    /**
+     * This is a variable which will contain an array of product categories.
+     * @type {string[]}
+     */
     let categories = [];
+
+    /**
+     * A variable for error status or Error message.
+     * @type {string|null}
+     */
     let error = null;
   
     let filterItem;
 
     const { subscribe, fetchProducts, setFilterItem } = productStore;
 
+    /**
+     * Lifecycle hook that runs after the component is first rendered.
+     * Which fetches product categories and initial product list.
+     */
     onMount(async () => {
         const { response, error: fetchError } = await getCategories();
         if (fetchError) {
@@ -20,14 +33,26 @@
         fetchProducts();
     });
 
+    /**
+     * Using the subscribe from productStore to subscribe to the product store and updates the filter item.
+     * @param {object} value - The current state of the product store.
+     */
     subscribe(value => {
     filterItem = value.filterItem;
     });
 
+
+    /**
+     * Toggles the visibility of the dropdown menu.
+     */
     const toggleDropdown = () => {
         document.getElementById('dropdown').classList.toggle('hidden');
     };
 
+    /**
+     *  A function that handles the filter selection and fetches products based on the selected category.
+     * @param {string} category - The selected category to filter products.
+     */
     const handleFilter = (category) => {
         setFilterItem(category);
         document.getElementById('dropdown').classList.add('hidden');

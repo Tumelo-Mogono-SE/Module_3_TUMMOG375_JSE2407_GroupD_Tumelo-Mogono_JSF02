@@ -4,10 +4,28 @@
     import CardSkeleton from './CardSkeleton.svelte';
     import Error from './Error.svelte';
 
+    /**
+     * An Array of products.
+     * @type {object[]}
+     */
     let products = [];
+
+    /**
+     * Loading state.
+     * @type {boolean}
+     */
     let loading = false;
+
+    /**
+     * A variable for error status or Error message.
+     * @type {string|boolean}
+     */
     let error = null;
   
+    /**
+     * Using the subscribe from productStore which subscribes to the product store and updates products, loading, and error state.
+     * @param {object} value - The current state of the product store.
+     */
     productStore.subscribe(value => {
       products = value.products;
       loading = value.loading;

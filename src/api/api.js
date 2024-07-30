@@ -1,3 +1,7 @@
+/**
+ * Fetches the list of product categories from the API.
+ * @returns {Promise<Object>} A promise that resolves to an object containing the response data or an error.
+ */
 export const getCategories = async () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products/categories");
@@ -11,6 +15,11 @@ export const getCategories = async () => {
     }
   };
   
+  /**
+ * Fetches the details of a single product from the API by its ID.
+ * @param {number} id - The ID of the product to fetch.
+ * @returns {Promise<Object>} A promise that resolves to an object containing the response data or an error.
+ */
   export const fetchSingleProduct = async (id) => {
     try {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
