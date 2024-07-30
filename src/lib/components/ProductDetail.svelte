@@ -1,4 +1,5 @@
 <script>
+    import { link } from 'svelte-spa-router'
     export let id;
     export let title;
     export let description;
@@ -32,5 +33,6 @@
       </button>
       <h2 class="text-lg font-bold">Description</h2>
       <p>{description}</p>
+      <a href="/" use:link><div class="bg-cyan-700 hover:bg-cyan-900 w-[90%] md:w-[14rem] lg:w-[14rem] text-white font-bold py-2 px-4 rounded mt-10">Back to Home</div></a>
     </div>
 </div>
