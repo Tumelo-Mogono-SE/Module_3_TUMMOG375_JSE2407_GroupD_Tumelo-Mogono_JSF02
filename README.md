@@ -1,47 +1,39 @@
-# Svelte + Vite
+# Module_3_TUMMOG375_JSE2407_GroupD_Tumelo-Mogono_JSF02
+# Refactor the e-commerce store in Svelte.js
 
-This template should help get you started developing with Svelte in Vite.
+# Peoject Overview
+The aim of this project is to re-build the e-commerce store using Svelte.js, utilizing the built e-commerce store in react.js.
 
-## Recommended IDE Setup
+The project was built using the svelte template using vite thus to run the project you will first need to install the node modules running npm install. Then you can run the code using npm run dev.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+# Tech Stack 
+* HTML
+* CSS Tailwind
+* JavaScript
+* Svelte.js
 
-## Need an official Svelte framework?
+# Content
+* Home Page
+* Filter and Sort buttons
+* Product List with cards of individual products
+* A page that displays product details.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+# Usage 
+The website is an e-commerce store which users can browse for different products from different categories.
 
-## Technical considerations
+* The home page which displays the product list displays all the products in cards in default sorting.
+* The website contains a filter dropdown and the sort options.
+* When the filter option for a category is selected a new api call is made to get new data for products of that specific category.
+* The user can than sort the data based on price from low to high and high to low.
+* The user can then see more details about the product by clicking a product card to go to another page which will display the product details.
 
-**Why use this over SvelteKit?**
+# Area of mastery
+Working with Svelte.js, the different ways to handle data compared to React.js and Alpine.js, how to structure components in Svelte as it differs from React.js using script tags, style tags and straight html although I decided to use tailwind which rendered style tags unnecessary. The usage of writable for state management, the usage of two-way data binding, event listeners which are inline using on: and adding the event next to it. Then there was Routing which for my svelte project I used svelte-spa-router which works slighlty similar to react-routers.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+# Project Process
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+# Challenges
+The biggest challenge I had with this project was working it params which took me a long time to work around, luckily with the help of some of the lms content I kept referring back to it solve with some breaking and rebuilding. I also had a tough time refactoring the store from React to Svelte, which took me a lot longer to fix and have functional than I thought.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+# Feedback
+This was a great introduction to another different JavaScript framework different from React.js and Alpine.js . The project was diverse but thanks to the reference project and the knowledge of React.js and JavaScript, this was fun to work on. I found alot of familiarity between Svelte and React, more specifically the usage of routes and how we use components. The issue I didn't like was the small issues I would face, such as have the word image in alternatives on an img tag and it would complain about that.
